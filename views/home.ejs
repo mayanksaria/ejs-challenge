@@ -1,0 +1,14 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+<p><%= startingContent %></p>
+
+<% for(let i = 0; i < logPost.length; i++) {%>
+   <h1><%= logPost[i].title %></h1>
+<%   if(logPost[i].content.length >= 100){ %>
+<%        var start = logPost[i].content.substring(0, 100); %>
+<%        var end = "...";  %>
+        <p><%= start + end  %> <a href="/posts/<%= logPost[i]._id %>">Read more</a></p>
+<%   }  %>
+<% } %>
+<%- include("partials/footer") -%>
